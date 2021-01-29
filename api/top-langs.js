@@ -28,6 +28,7 @@ module.exports = async (req, res) => {
     exclude_repo,
     custom_title,
     locale,
+    include_fork,
   } = req.query;
   let topLangs;
 
@@ -46,6 +47,7 @@ module.exports = async (req, res) => {
       username,
       langs_count,
       parseArray(exclude_repo),
+      parseArray(include_fork),
     );
 
     const cacheSeconds = clampValue(
