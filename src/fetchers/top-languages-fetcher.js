@@ -34,7 +34,7 @@ const fetcher = (variables, token) => {
   );
 };
 
-async function fetchTopLanguages(username, langsCount = 5, exclude_repo = []) {
+async function fetchTopLanguages(username, langsCount = 5, exclude_repo = [], include_fork = []) {
   if (!username) throw Error("Invalid username");
 
   langsCount = clampValue(parseInt(langsCount), 1, 10);
